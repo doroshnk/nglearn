@@ -1,0 +1,13 @@
+<p>Form add car</p>
+<hr>
+<app-add-car (onAddCar)="updateCarList($event)"></app-add-car>
+
+<div class="list-group">
+    <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car">
+        <h4 #itemHead class="list-group-item-hading">{{'Название'}} {{car.name}}</h4>
+        <p class="list-group-item-text"> Год {{car.year}} <b>{{20 +10}} </b></p>
+        
+    </app-car>
+</div>
+
+<hr>

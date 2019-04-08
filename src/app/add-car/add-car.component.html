@@ -1,0 +1,5 @@
+<!-- <input type="text" class="form-control" [(ngModel)]="carName" > -->
+<input type="text" class="form-control" #carNameInput >
+<!-- <input type="text" class="form-control" [(ngModel)]="carYear" > -->
+<input type="text" class="form-control" #carYearInput >
+<button [disabled]="0" (click)="addCar(carNameInput)" class="btn btn-primary"> ДОбавить машину</button>

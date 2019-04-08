@@ -1,0 +1,44 @@
+<input type="text" class="form-control" [(ngModel)]="carName" >
+<button [disabled]="0" (click)="addStatus()" class="btn btn-primary"> ДОбавить машину</button>
+<hr>
+<h1>*ngIfElse</h1>
+<p *ngIf="!addCarStatusBolean; else sAddCar">машина не добавлена</p>
+<ng-template #sAddCar>
+    <p>машина добавлена</p>
+</ng-template>
+<p>{{addCarStatus}}</p>
+<hr>
+<h1>*ngFor [ngClass] [ngStyle]</h1>
+<!-- <app-car *ngFor="let car of cars"></app-car> -->
+<ul>
+    <li *ngFor="let car of cars1; let indx = index">
+        <div 
+          [ngClass]="{'big-text': getLengthName(car)}"
+          [ngStyle]="{backgroundColor: (indx ) % 2 ? 'red' : 'green' , color : 'white' }" 
+        >
+              {{indx + 1}}) - {{car}}
+        </div>
+    </li>
+</ul>
+<hr>
+<h1>PIPE</h1>
+<!-- <app-car *ngFor="let car of cars"></app-car> -->
+<ul>
+    <li *ngFor="let date of itemsDate; let indx = index">
+        <div>
+              {{indx + 1}}) - {{ date | date:'medium' | uppercase }}
+        </div>
+    </li>
+</ul>
+<hr>
+<h1>one way binding</h1>
+<input class="form-control"  type="text" (input)="onKeyUp($event)" >
+<p>{{inputText}} </p>
+<input class="form-control" #myInput type="text" (input)="onKeyUpVal(myInput.value)" >
+<p>{{inputText2}} </p>
+<input class="form-control"  type="text" (keydown)="onKeyUpEnter($event)" >
+<input class="form-control"  type="text" (keyup.enter)="onKeyUpEnter2($event)" >
+<p>{{inputText3}} </p>
+<hr>
+<h1>two 1 way binding</h1>
+<input class="form-control"  type="text" [(ngModel)]="inputText3" >
