@@ -41,10 +41,10 @@ export class CarComponent implements
     ngAfterContentChecked() {
         console.log('ngAfterContentChecked');
     }
-    ngAfterViewtInit() {
+    ngAfterViewInit() {
         console.log('ngAfterViewtInit');
     }
-    ngAfterViewtChecked() {
+    ngAfterViewChecked() {
         console.log('ngAfterViewtChecked');
     }
     ngOnDestroy() {
