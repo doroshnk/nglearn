@@ -27,7 +27,8 @@
     <div class="form-group">
       <label>Выберите страну</label>
       <select class="form-control"
-        ngModel name="country"
+        [ngModel]="defAnsw" 
+        name="defCountry"
         required
       >
         <option value="ru">Россия</option>
@@ -38,7 +39,8 @@
     <div class="radio" *ngFor="let ans of answers">
       <label>
         <input type="radio" [value]="ans.type"
-        ngModel name="ans"
+        [ngModel]="defAnsw" 
+        name="ans"
         required
         > {{ans.text}}
       </label>

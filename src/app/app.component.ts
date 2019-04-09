@@ -20,6 +20,8 @@ export class AppComponent {
     type: 'no',
     text: 'Нет'
 }];
+defAnsw = 'no';
+defCountry = 'ru';
 
 
 
