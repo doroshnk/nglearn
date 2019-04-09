@@ -1,10 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'nglearn';
+export class AppComponent implements OnInit {
+  answers = [{
+    type: 'yes',
+    text: 'Да'
+  }, {
+    type: 'no',
+    text: 'Нет'
+  }];
+
+  form: FormGroup;
+
+   ngOnInit() {
+       this.form = new FormGroup({
+            email: new FormControl(''),
+            pass: new FormControl(''),
+            country: new FormControl('ru'),
+            answer: new FormControl('no')
+       });
+  }
+  onSubmit() {
+      console.log('sudmit', this.form);
+  }
 }
