@@ -4,31 +4,34 @@
       <!-- [ngClass]="{hasError: email.invalid  && email.touched }" -->
       <!-- [ngClass]="{verdanaFont:true}" -->
       <!-- [ngClass]="{'has-error':true}" -->
-      <div class="form-group" [ngClass]="{ hasError: email.invalid  && email.touched }"> 
-      <label>Email</label>
-      <input type="text" class="form-control"
-      ngModel name="email"
-      required
-      email
-      #email="ngModel"
-      >
-      <p *ngIf="email.invalid && email.touched" >Wrong emaild</p>
-      
-    </div>
-    <div class="form-group" [ngClass]="{hasError: pass.invalid && pass.touched}">
-        <label>Пароль</label>
-        <input type="password" class="form-control"
-        ngModel name="pass"
-        required
-        #pass="ngModel"
-        >
-        <p *ngIf="pass.invalid && pass.touched" >Can not been emptyy</p>
-    </div>
+      <div ngModelGroup="user" #user="ngModelGroup" >
+          <div class="form-group" [ngClass]="{ hasError: email.invalid  && email.touched }"> 
+            <label>Email</label>
+            <input type="text" class="form-control"
+            ngModel name="email"
+            required
+            email
+            #email="ngModel"
+            >
+            <p *ngIf="email.invalid && email.touched" >Wrong email</p>
+            
+        </div>
+        <div class="form-group" [ngClass]="{hasError: pass.invalid && pass.touched}">
+            <label>Пароль</label>
+            <input type="password" class="form-control"
+            ngModel name="pass"
+            required
+            #pass="ngModel"
+            >
+            <p *ngIf="pass.invalid && pass.touched" >Can not been empty</p>
+        </div>
+        <p *ngIf="user.invalid && user.touched" > wrong user data </p>
+      </div>
     <div class="form-group">
       <label>Выберите страну</label>
       <select class="form-control"
-        [ngModel]="defAnsw" 
-        name="defCountry"
+        [ngModel]="defCountry" 
+        name="country"
         required
       >
         <option value="ru">Россия</option>
