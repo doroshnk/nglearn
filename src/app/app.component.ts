@@ -52,4 +52,12 @@ export class AppComponent implements OnInit {
             console.log(d);
         });
     }
+    delCar(car: Cars) {
+        this.carsService.delCar(car).subscribe((d) => {
+            console.log(d);
+            this.cars = this.cars.filter((c) => {
+               return c.id !== car.id;
+            });
+        });
+    }
 }
