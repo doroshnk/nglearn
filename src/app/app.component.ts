@@ -4,7 +4,12 @@ import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styles: [`
+      input.ng-invalid.ng-touched {
+        border: 1px solid red;
+    }
+`]
 })
 export class AppComponent {
     @ViewChild('form') viewChildForm: NgForm;
@@ -14,10 +19,11 @@ export class AppComponent {
   }, {
     type: 'no',
     text: 'Нет'
-  }];
+}];
+
 
 
   submitForm(form: NgForm) {
-      console.log('sudmoit', form, this.viewChildForm);
+      console.log('sudmoit', form);
   }
 }
