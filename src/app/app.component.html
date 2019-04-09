@@ -10,7 +10,13 @@
         <div class="form-group" [ngClass]="{'has-error': form.get('user.pass').invalid && form.get('user.pass').touched}">
           <label>Пароль</label>
           <input type="password" class="form-control" formControlName="pass">
-          <p *ngIf="form.get('user.pass').invalid && form.get('user.pass').touched" >can not been empty</p>
+          <p 
+          *ngIf="form.get('user.pass').invalid && form.get('user.pass').touched"
+           >
+           <span *ngIf="form.get('user.pass').errors['required']">can not been empty</span>
+           <span *ngIf="form.get('user.pass').errors['lengthEror']">can not been less {{maxPasswLenth}} char</span>
+           
+        </p>
         </div>
     </div>
     <div class="form-group">

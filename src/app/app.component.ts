@@ -16,12 +16,12 @@ export class AppComponent implements OnInit {
   }];
 
   form: FormGroup;
-
+  maxPasswLenth = 5;
    ngOnInit() {
        this.form = new FormGroup({
             user: new FormGroup({
                 email: new FormControl('', [Validators.required, Validators.email]),
-                pass: new FormControl('', Validators.required),
+                pass: new FormControl('', [Validators.required, this.checkPassword.bind(this)]),
             }),
             country: new FormControl('ru'),
             answer: new FormControl('no')
@@ -29,5 +29,10 @@ export class AppComponent implements OnInit {
   }
   onSubmit() {
       console.log('sudmit', this.form);
+  }
+  checkPassword(control: FormControl) {
+    if (control.value.length < this.maxPasswLenth) {
+        return {lengthEror: true};
+    }
   }
 }
