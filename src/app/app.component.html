@@ -14,7 +14,9 @@
             #email="ngModel"
             >
             <p *ngIf="email.invalid && email.touched" >Wrong email</p>
-            
+            <button class="btn btn-primary" type="button"
+            (click)="addRandEmail()" 
+            >Fill random email</button>
         </div>
         <div class="form-group" [ngClass]="{hasError: pass.invalid && pass.touched}">
             <label>Пароль</label>
@@ -54,4 +56,5 @@
     >Сохранить</button>
 
   </form>
+  <div *ngIf="forIsSubmited"><pre>{{ formData | json }}</pre></div>
 </div>
