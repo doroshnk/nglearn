@@ -5,6 +5,6 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class PovPipe implements PipeTransform {
     transform(value: number, powNumver: number = 1) {
-        return Math.pow(value, powNumver) ;
+        return Math.pow(value, powNumver);
     }
 }

@@ -1,7 +1,9 @@
-<div class="col-xs-8 col-xs-offset-2">
+<div class="col-md-8 col-md-offset-2">
     <input type="text" class="form-control" [(ngModel)]="carSearch" placeholder="Search">
+    <h3>{{ asyncTitle | async}}</h3>
+    <button class="btn btn-primary" (click)="addCar()">Add</button>
     <ul class="list-group">
-        <li *ngFor="let car of cars | carFilter:carSearch:'descr'; let i = index"   
+        <li *ngFor="let car of cars | carFilter:carSearch:'name'; let i = index"   
         class="list-group-item"
         >
         <b>{{i+1}} </b>{{car.name}} - <i>{{car.descr}}</i>

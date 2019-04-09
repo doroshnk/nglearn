@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'carFilter'
+  name: 'carFilter',
+  pure: true
 })
 export class CarFilterPipe implements PipeTransform {
   transform(carList, search: string, fieldName: string): any {
