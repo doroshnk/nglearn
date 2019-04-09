@@ -5,7 +5,11 @@
         <!-- <div class="form-group" [ngClass]="{'has-error': form.get('user').get('email').invalid && form.get('user').get('email').touched}"> -->
           <label>Email</label>
           <input type="text" class="form-control" formControlName="email">
-          <p *ngIf="form.get('user.email').invalid && form.get('user.email').touched" >can not been empty</p>
+          <p *ngIf="form.get('user.email').invalid && form.get('user.email').touched" >
+              <span *ngIf="form.get('user.email').errors['required']">can not been empty</span>
+              <span *ngIf="form.get('user.email').errors['email']">wrong format email</span>
+              <span *ngIf="form.get('user.email').errors['emailUsed']">this email already exists</span>
+            </p>
         </div>
         <div class="form-group" [ngClass]="{'has-error': form.get('user.pass').invalid && form.get('user.pass').touched}">
           <label>Пароль</label>
