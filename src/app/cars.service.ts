@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class CarsService {
   constructor(private http: HttpClient ) {}
-    getCars() {
-      return this.http.get('http://localhost:3000/cars');
+  getCars() {
+      const H  = new HttpHeaders(
+          {
+              'Content-Type': 'application/json; charset=utf-8'
+          }
+      );
+    //   H.set('Content-Type', 'application/json; charset=utf-8');
+      return this.http.get('http://localhost:3000/cars', {headers: H});
     }
     addCar(carName: string) {
       const data = {
