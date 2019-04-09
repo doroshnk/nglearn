@@ -6,7 +6,12 @@
   <hr>
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let car of cars">
-      <span class="badge">{{car.id}}</span> {{car.name}} ({{car.color}})
+      <span [ngStyle]="{background: car.color}"
+      class="badge">
+      {{car.id}}
+      </span> 
+      {{car.name}} 
+      <button class="btn btn-xs btn-info" (click)="newColor(car)" >cnange color</button>
     </li>
   </ul>
 </div>

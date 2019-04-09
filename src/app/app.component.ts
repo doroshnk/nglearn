@@ -15,6 +15,14 @@ interface Cars {
 })
 export class AppComponent implements OnInit {
   cars: Cars[];
+  colors = [
+      'red',
+      'blue',
+      'green',
+      'pink',
+      'yellow',
+      'grey',
+  ];
   carName = '';
   constructor(private carsService: CarsService ) {}
   addCar() {
@@ -31,6 +39,17 @@ export class AppComponent implements OnInit {
         this.carsService.getCars().subscribe((response: Cars[]) => {
           console.log(response);
           this.cars = response;
+        });
+    }
+    randomColor() {
+        const inx = Math.round(Math.random() * (this.colors.length - 1));
+        return this.colors[inx];
+    }
+
+    newColor(car: Cars) {
+        car.color = this.randomColor();
+        this.carsService.changeColor(car).subscribe((d) => {
+            console.log(d);
         });
     }
 }

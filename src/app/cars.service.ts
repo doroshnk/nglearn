@@ -14,4 +14,8 @@ export class CarsService {
       };
       return this.http.post('http://localhost:3000/cars', data);
     }
+
+    changeColor(car: any) {
+        return this.http.put(`http://localhost:3000/cars/${car.id}`, car);
+    }
 }
