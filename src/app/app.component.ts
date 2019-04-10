@@ -36,10 +36,15 @@ export class AppComponent implements OnInit {
   }
   ngOnInit() {}
     loadCars() {
-        this.carsService.getCars().subscribe((response: Cars[]) => {
-          console.log(response);
-          this.cars = response;
-        });
+        this.carsService.getCars().subscribe(
+            (response: Cars[]) => {
+                console.log(response);
+                this.cars = response;
+            },
+            (error) => {
+                 console.log(error);
+            }
+        );
     }
     randomColor() {
         const inx = Math.round(Math.random() * (this.colors.length - 1));
