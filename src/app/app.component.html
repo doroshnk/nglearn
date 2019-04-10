@@ -1,5 +1,6 @@
 <div class="col-xs-8 col-xs-offset-2">
-<input type="text" class="form-control" [(ngModel)]="carName">
+  <h1> {{ appTitle | async }}</h1>
+  <input type="text" class="form-control" [(ngModel)]="carName">
   <hr>
   <button class="btn btn-primary" (click)="loadCars()" >Загрузить машины</button>
   <button class="btn btn-succes" (click)="addCar()"> add car</button> 
@@ -11,7 +12,7 @@
       {{car.id}}
       </span> 
       {{car.name}} 
-      <button class="btn btn-xs btn-info" (click)="newColor(car)" >cnange color</button>
+      <button class="btn btn-xs btn-info" (click)="newColor(car)" >change color</button>
       <button class="btn btn-xs btn-danger" (click)="delCar(car)" >del car</button>
     </li>
   </ul>

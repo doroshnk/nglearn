@@ -1,4 +1,5 @@
 {
+ "title": {"name": "Car manager"},
   "posts": [
     { "id": 1, "title": "json-server123", "author": "typicode" }
   

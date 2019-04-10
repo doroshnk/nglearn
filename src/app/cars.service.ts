@@ -25,6 +25,12 @@ export class CarsService {
     //   .catchError(() => {
     //   });
     }
+    getTitle() {
+        return this.http.get('http://localhost:3000/title')
+        .pipe(
+            map((data: any) => data.name)
+        );
+    }
     addCar(carName: string) {
       const data = {
         name: carName,

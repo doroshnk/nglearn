@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
       'grey',
   ];
   carName = '';
+  appTitle;
   constructor(private carsService: CarsService ) {}
   addCar() {
       this.carsService
@@ -34,7 +35,16 @@ export class AppComponent implements OnInit {
       });
       this.carName = '';
   }
-  ngOnInit() {}
+  ngOnInit() {
+    const a =  this.carsService.getTitle();
+    console.log(a);
+    this.appTitle = a;
+//    .subscribe(
+//        (data: any) => {
+//            this.appTitle = data.name;
+//        }
+//    );
+  }
     loadCars() {
         this.carsService.getCars().subscribe(
             (response: Cars[]) => {
