@@ -1,6 +1,21 @@
 <h3>
-  detail of car {{id}} name {{name}} 
+  id {{id}}  
 </h3>
+<h3>
+    name {{name}}
+</h3>
+<h3>
+  color {{color}} 
+</h3>
+<h3>
+  year {{year}} 
+</h3>
+<hr>
+<p>{{hash}} </p>
 
-<h3><a [routerLink]="['/cars', 8 , 'maz']"  > open maz</a></h3>
+
+<h3>
+    <!-- <a [routerLink]="['/cars', 8 , 'maz']"  > open maz</a> -->
+    <a (click)="openMazPage()" > open maz</a>
+</h3>
 
