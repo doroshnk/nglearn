@@ -10,4 +10,12 @@ import { divTrigger, changeWithTrriger } from '../app.animations';
 export class AppComponent {
 
     isVisible = false;
+
+    onAnimationStart(event: AnimationEffect) {
+      console.log(event);
+    }
+    onAnimationDone(event: AnimationEffect) {
+        console.log(event);
+    }
+
 }
