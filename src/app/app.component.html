@@ -1,11 +1,6 @@
-<!-- <div 
+<button class="btn btn-primary" (click)="isVisible = !isVisible">click</button>
 
-[@clickedDiv]="clickedDivState" 
-(click)="changeDivState()"
-(mousedown)="clickedDivState = 'active'" 
-></div> -->
-<div 
-
-[@multi]="multiState" 
-(click)="multiState = multiState === 'start' ? 'end' : 'start'"
-></div>
+<div class="alert alert-danger"
+*ngIf="isVisible"
+[@divTrigger]="'show'"
+>alert block</div>
