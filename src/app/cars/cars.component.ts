@@ -8,10 +8,20 @@ import { Component } from '@angular/core';
 export class CarsComponent {
 
   addCarStatus = false;
-  carName = ''
+  carName = '';
+
+  cars = ['Ford','BMW','Audi'];
+  items = [
+    {id:1,name:'item1'},
+    {id:7,name:'item7'},
+    {id:3,name:'item3'},
+    {id:5,name:'item5'}
+];
   constructor(){}
 
   addCar() {
     this.addCarStatus = true;
+    this.cars.push(this.carName);
+    this.carName = '';
   }
 }
