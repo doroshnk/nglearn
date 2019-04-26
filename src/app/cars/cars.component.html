@@ -1,10 +1,10 @@
+<input type="text"  class="form-control" [(ngModel)]="carName" >
 <button type="button" class="btn btn-primary" (click)="addCar()"  >Add car</button>
-<p>{{addCarStatus}}</p>
+<p *ngIf="!addCarStatus; else successStatys">car not added</p>
+<ng-template #successStatys>
+  <p>car added</p>
+</ng-template>
+<p *ngIf="addCarStatus">car added</p>
 <hr>
 <app-car></app-car>
 <app-car></app-car>
-<hr>
-
-<input type="text"  class="form-control" (keyUp.enter)="keyUp($event)" >
-<input type="text"  class="form-control" [(ngModel)]="inputText" >
-<p>{{ inputText }}</p>

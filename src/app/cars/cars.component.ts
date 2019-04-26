@@ -7,26 +7,11 @@ import { Component } from '@angular/core';
 })
 export class CarsComponent {
 
-  addCarStatus = '';
-  inputText = '';
-  inputTextRef = '';
-  inputTextEnter = '';
-
+  addCarStatus = false;
+  carName = ''
   constructor(){}
 
   addCar() {
-    this.addCarStatus = 'cars added';
-  }
-
-  keyUp(event: Event) {
-    this.inputText = (<HTMLInputElement>event.target).value;
-  }
-
-  keyUpEnter(event: Event) {
-    this.inputTextEnter = (<HTMLInputElement>event.target).value;
-  }
-
-  keyUpRef(val: string) {
-    this.inputTextRef = val;
+    this.addCarStatus = true;
   }
 }
