@@ -4,9 +4,7 @@
 <app-car></app-car>
 <app-car></app-car>
 <hr>
-<input type="text"  class="form-control" (input)="keyUp($event)" >
+
+<input type="text"  class="form-control" (keyUp.enter)="keyUp($event)" >
+<input type="text"  class="form-control" [(ngModel)]="inputText" >
 <p>{{ inputText }}</p>
-<input type="text"  class="form-control" #ref (input)="keyUpRef(ref.value)" >
-<p>{{ inputTextRef }}</p>
-<input type="text"  class="form-control" (keyUp.enter)="keyUpEnter($event)" >
-<p>{{ inputTextEnter }}</p>
