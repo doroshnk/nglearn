@@ -7,8 +7,6 @@ import { Component } from '@angular/core';
 })
 export class CarsComponent {
 
-  carYear = 2000;
-  carName = '';
 
   cars: {name: string, year: number}[] = [
     {name: 'Ford', year: 2011},
@@ -19,9 +17,9 @@ export class CarsComponent {
 
   }
 
-  addCar() {
-    this.cars.push({name: this.carName, year: this.carYear});
-    this.carName = '';
-    this.carYear = 2000;
+  updateCarList(car: {name: string, year: number}){
+    this.cars.push({name: car.name, year: car.year});
   }
+
+
 }
