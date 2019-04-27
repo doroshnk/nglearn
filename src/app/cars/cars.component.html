@@ -7,11 +7,16 @@
 <p *ngIf="addCarStatus">car added</p>
 <hr>
 
-<app-car *ngFor="let car of cars"></app-car>
+<!-- <app-car *ngFor="let car of cars"></app-car> -->
 
 
 <ul>
-  <li *ngFor="let item of items; let idx = index">
-    <b>{{idx+1}}. ID {{item.id}}</b> - {{item.name}}
+  <li *ngFor="let car of cars; let idx = index">
+    <div
+      [ngClass]="{'bg': car.length > 4}" 
+      [ngStyle]="{backgroundColor: (idx+1) % 2 === 0 ? 'red' : 'blue ', color: 'white'}"
+    >
+      <b>{{idx+1}}</b> - {{car}}
+    </div>
   </li>
 </ul>
