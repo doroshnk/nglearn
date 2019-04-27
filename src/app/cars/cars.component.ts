@@ -12,6 +12,12 @@ export class CarsComponent {
 
   cars = ['Ford','BMW','Audi','Lada','Mazda'];
 
+  dates = [
+    new Date(2015,3,10),
+    new Date(2007,23,1),
+    new Date(2011,4,8),
+    new Date(2014,1,1),
+  ]
   constructor(){}
 
   addCar() {
