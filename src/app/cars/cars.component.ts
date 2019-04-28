@@ -11,8 +11,8 @@ export class CarsComponent {
 
   cars: {name: string, year: number}[] = [
     {name: 'Ford', year: 2011},
-    {name: 'Mazda', year: 2015},
-    {name: 'BMW', year: 1999}
+    // {name: 'Mazda', year: 2015},
+    // {name: 'BMW', year: 1999}
   ];
   constructor(){
 
@@ -20,6 +20,13 @@ export class CarsComponent {
 
   updateCarList(car: {name: string, year: number}){
     this.cars.push({name: car.name, year: car.year});
+  }
+  changeCN(){
+    this.cars[0].name = 'lada';
+  }
+
+  deleteCar() {
+    this.cars.splice(0,1);
   }
 
 
