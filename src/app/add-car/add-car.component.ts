@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-add-car',
@@ -6,19 +6,25 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./add-car.component.css']
 })
 export class AddCarComponent implements OnInit {
-  carYear = 2000;
-  carName = '';
+
   @Output('onAddCar') carEmitter = new EventEmitter<{name: string, year: number}>()
+  @ViewChild('carYearInput') carYearInput: ElementRef;
 
   constructor() { }
 
   ngOnInit() {
+    this.carYearInput.nativeElement.value = 2000
   }
 
-  addCar() {
-    this.carEmitter.emit({name: this.carName, year: this.carYear})
-    this.carName = '';
-    this.carYear = 2000;
+  addCar(carNameInput: HTMLInputElement) {
+    console.log(this.carYearInput);
+    this.carEmitter.emit({
+      name: carNameInput.value,
+      year: +this.carYearInput.nativeElement.value
+    })
+    carNameInput.value = '';
+    this.carYearInput.nativeElement.value = 2000
+
   }
 
 }
