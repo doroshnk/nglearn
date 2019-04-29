@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  headerText = 'create directive';
+  headerText = 'create directive ';
 }
