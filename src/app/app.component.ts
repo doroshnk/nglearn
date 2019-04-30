@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   headerText = 'create directive ';
+  items = [1,2,3,4,5]
+  cur = 1;
+
+  onCLick(item: number) {
+    this.cur = item;
+  }
 }
